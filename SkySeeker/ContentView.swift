@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    private let weatherViewModel = WeatherViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
             Text("Hello, world!")
-        }
-        .padding()
+            .padding()
+            .task {
+                await weatherViewModel.getWeather(city: "Buenos Aires", API_KEY: "")
+                <#code#>
+            }
     }
 }
 

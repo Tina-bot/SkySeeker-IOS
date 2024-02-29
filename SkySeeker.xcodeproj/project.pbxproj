@@ -11,6 +11,8 @@
 		B41C7FFF2B9139AB00D7DC35 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C7FFE2B9139AB00D7DC35 /* ContentView.swift */; };
 		B41C80012B9139AC00D7DC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41C80002B9139AC00D7DC35 /* Assets.xcassets */; };
 		B41C80042B9139AC00D7DC35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41C80032B9139AC00D7DC35 /* Preview Assets.xcassets */; };
+		B41C800B2B913A9800D7DC35 /* WheatherResponseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C800A2B913A9800D7DC35 /* WheatherResponseDataModel.swift */; };
+		B41C800E2B913C7600D7DC35 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C800D2B913C7600D7DC35 /* WeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		B41C7FFE2B9139AB00D7DC35 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B41C80002B9139AC00D7DC35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B41C80032B9139AC00D7DC35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B41C800A2B913A9800D7DC35 /* WheatherResponseDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherResponseDataModel.swift; sourceTree = "<group>"; };
+		B41C800D2B913C7600D7DC35 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 				B41C7FFE2B9139AB00D7DC35 /* ContentView.swift */,
 				B41C80002B9139AC00D7DC35 /* Assets.xcassets */,
 				B41C80022B9139AC00D7DC35 /* Preview Content */,
+				B41C800C2B913C5000D7DC35 /* Model */,
+				B41C800D2B913C7600D7DC35 /* WeatherViewModel.swift */,
 			);
 			path = SkySeeker;
 			sourceTree = "<group>";
@@ -65,6 +71,14 @@
 				B41C80032B9139AC00D7DC35 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B41C800C2B913C5000D7DC35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B41C800A2B913A9800D7DC35 /* WheatherResponseDataModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B41C800B2B913A9800D7DC35 /* WheatherResponseDataModel.swift in Sources */,
+				B41C800E2B913C7600D7DC35 /* WeatherViewModel.swift in Sources */,
 				B41C7FFF2B9139AB00D7DC35 /* ContentView.swift in Sources */,
 				B41C7FFD2B9139AB00D7DC35 /* SkySeekerApp.swift in Sources */,
 			);
