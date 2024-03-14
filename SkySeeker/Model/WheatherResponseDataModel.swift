@@ -1,10 +1,3 @@
-//
-//  WheatherResponseDataModel.swift
-//  SkySeeker
-//
-//  Created by Agustina Marcos on 29/02/2024.
-//
-
 import Foundation
 
 struct WeatherResponseDataModel: Decodable {
