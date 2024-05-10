@@ -3,7 +3,22 @@ import Foundation
 struct WeatherResponseDataModel: Decodable {
     let city: String
     let weather: [WeatherDataModel]
-    let temperature: TemperatureDataModel
+    let temperature: TemeperatureDataModel
+    let sun: SunModel
+    let timezone: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case city = "name"
+        case weather
+        case temperature = "main"
+        case sun = "sys"
+        case timezone
+    }
+}
+
+struct SunModel: Decodable {
+    let sunrise: Date
+    let sunset: Date
 }
 
 struct WeatherDataModel: Decodable {
@@ -18,7 +33,7 @@ struct WeatherDataModel: Decodable {
     }
 }
 
-struct TemperatureDataModel: Decodable {
+struct TemeperatureDataModel: Decodable {
     let currentTemperature: Double
     let minTemperature: Double
     let maxTemperature: Double
@@ -29,6 +44,5 @@ struct TemperatureDataModel: Decodable {
         case minTemperature = "temp_min"
         case maxTemperature = "temp_max"
         case humidity
-        
     }
 }

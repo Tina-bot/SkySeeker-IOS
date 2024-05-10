@@ -1,37 +1,56 @@
     import SwiftUI
 
     struct ContentView: View {
-        private let weatherViewModel = WeatherViewModel()
+        @StateObject var weatherViewModel = WeatherViewModel()
         
         var body: some View {
             ZStack{
                 VStack{
-                    Text("London")
+                    Text(weatherViewModel.weatherModel.city)
                         .foregroundColor(.white)
                         .font(.system(size: 70))
-                    Text("Cuddle")
+                        .padding(.top, 10)
+                    Text(weatherViewModel.weatherModel.description)
                         .font(.headline)
                         .foregroundColor(.white)
                         .padding(.bottom, 8)
                     HStack {
-                        Text("8°")
+                        if let iconURL = weatherViewModel.weatherModel.iconURL,
+                           let url = URL(string: "http://openweathermap.org/img/wn/\(iconURL)@2x.png"){
+                            AsyncImage(url: url){ image in
+                                image
+                            } placeholder: {
+                                ProgressView()
+                            }
+                        }
+                        Text(weatherViewModel.weatherModel.currentTemperature)
                             .font(.system(size: 70))
                             .foregroundColor(.white)
                     }
                     .padding(.top, -20)
                     HStack(spacing: 14){
-                        Label("7°", systemImage: "thermometer.sun.fill")
-                        Label("4°", systemImage: "thermometer.snowflake")
+                        Label(weatherViewModel.weatherModel.maxTemperature, systemImage: "thermometer.sun.fill")
+                        Label(weatherViewModel.weatherModel.minTemperature, systemImage: "thermometer.snowflake")
                     }
                     .symbolRenderingMode(.multicolor)
                     .foregroundColor(.white)
-                    
+                    .padding(.bottom, 2)
+                    Label(weatherViewModel.weatherModel.humidity, systemImage: "humidity.fill")
+                        .symbolRenderingMode(.multicolor)
+                        .foregroundColor(.white)
+                    Spacer()
+                    AsyncImage(url: URL(string: "https://www.textures4photoshop.com/tex/thumbs/free-clouds-sky-overlay-png-for-photoshop-thumb41.png")) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .padding(.bottom, 20)
                 }
-                Text("Hello, world!")
-                    .padding()
             }
             .background(
-                LinearGradient(colors: [.blue, .purple], startPoint: .topLeading, endPoint: .bottomLeading))
+                LinearGradient(colors: [.purple,.white], startPoint: .topLeading, endPoint: .bottomLeading))
             .task {
                 await weatherViewModel.getWeather(city: "London");
                 }
