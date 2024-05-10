@@ -3,7 +3,7 @@ import Foundation
 struct WeatherResponseDataModel: Decodable {
     let city: String
     let weather: [WeatherDataModel]
-    let temperature: TemeperatureDataModel
+    let temperature: TemperatureDataModel
     let sun: SunModel
     let timezone: Double
     
@@ -33,7 +33,7 @@ struct WeatherDataModel: Decodable {
     }
 }
 
-struct TemeperatureDataModel: Decodable {
+struct TemperatureDataModel: Decodable {
     let currentTemperature: Double
     let minTemperature: Double
     let maxTemperature: Double
